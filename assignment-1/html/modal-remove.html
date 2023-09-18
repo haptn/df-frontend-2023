@@ -1,0 +1,31 @@
+<!-- HTML -->
+<div class="modal__content">
+  <div class="modal__header">
+    <span class="btn-close" onclick="closeModal('remove')">
+      &times;
+    </span>
+    <h2 class="text-center">Remove book</h2>
+  </div>
+
+  <div id="removing-book" class="modal__body"></div>
+
+  <div class="modal__footer h-flex justify-center">
+    <button id="btn-remove" class="btn btn--link">
+      Remove
+    </button>
+    <button class="btn btn--primary" onclick="closeModal('remove')">
+      Cancel
+    </button>
+  </div>
+</div>
+
+<!-- Styles -->
+<style>
+  #modal-remove .modal__content {
+    width: 40rem;
+  }
+
+  #modal-remove .modal__body b {
+    color: var(--bold-text-color);
+  }
+</style>

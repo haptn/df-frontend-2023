@@ -1,0 +1,72 @@
+<!-- HTML -->
+<section class="h-flex justify-end task-bar">
+  <input id="search-input" placeholder="Search book" type="text" onchange="searchBook()" />
+  <button class="btn btn--primary" onclick="openModalAdd()">
+    Add book
+  </button>
+</section>
+
+<section title="List books table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Cover image</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Topic</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</section>
+
+<!-- Styles -->
+<style>
+  .main {
+    padding: 3rem 2rem;
+    max-height: calc(100vh - 6rem);
+    height: 100%;
+    overflow: auto;
+    background-color: var(--bg-color);
+  }
+
+  .task-bar {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+
+  .table * {
+    font-size: 1.4rem;
+  }
+
+  .table td,
+  .table th {
+    border: 2px solid #dddddd;
+    padding: 8px;
+  }
+
+  .table th {
+    color: var(--bold-text-color);
+  }
+
+  .table tr:nth-child(even) {
+    background-color: var(--table-even-bg);
+  }
+
+  .table td>img {
+    width: 10rem;
+    height: 13rem;
+    object-fit: cover;
+    object-position: center;
+    -o-object-fit: cover;
+    -o-object-position: center;
+  }
+</style>

@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Bookstore</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
 
-  <body>
-    Hello world
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Bookstore CMS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link href="./css/global.css" rel="stylesheet" type="text/css" />
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <script src="./js/constants.js" type="text/javascript" defer></script>
+  <script src="./js/helper.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+  <header class="h-flex justify-between header"></header>
+  <main class="main"></main>
+
+  <div id="modal-add" class="modal"></div>
+  <div id="modal-remove" class="modal"></div>
+  <div id="modal-view" class="modal"></div>
+
+  <script src=" ./js/script.js" type="text/javascript" defer></script>
+</body>
+
 </html>

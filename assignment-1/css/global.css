@@ -1,0 +1,66 @@
+/* ------------------------ Base CSS ------------------------ */
+:root {
+  --btn-bg: #d2445a;
+  --btn-hover-bg: #bb374a;
+  --bg-color: #f5f5f5;
+  --table-even-bg: #f8f8f8;
+  --border-color: #a5a5a5;
+  --bold-text-color: #444;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 62.5%;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p, span {
+  font-size: 1.4rem;
+}
+
+/* ------------------------ Layout ------------------------ */
+/* horizontal flex */
+.h-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+/* verticle flex */
+.v-flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.grid {
+  display: grid;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.text-center {
+  text-align: center;
+}

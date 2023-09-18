@@ -1,0 +1,131 @@
+/* ------------------------ Common Components ------------------------ */
+.msg-empty {
+  color: #888;
+  font-weight: 600;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 6.4rem 0;
+  background-color: rgba(0, 0, 0, .5);
+
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  overflow: auto;
+}
+.modal__content {
+  width: 45rem;
+  margin: auto;
+  padding: 0;
+  position: relative;
+
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.2);
+
+  -webkit-animation-name: zoomIn;
+  -webkit-animation-duration: 0.3s;
+  animation-name: zoomIn;
+  animation-duration: 0.3s
+}
+.modal__header {
+  padding: 1.6rem;
+}
+.modal__header > h2 {
+  font-size: 2rem;
+}
+.modal__header > .btn-close {
+  color: #888;
+  font-size: 2.8rem;
+  font-weight: bold;
+
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+.modal__header > .btn-close:hover,
+.modal__header > .btn-close:focus {
+  color: #666;
+  cursor: pointer;
+}
+.modal__body {
+  padding: 1rem 1.6rem 2rem;
+
+}
+.modal__footer {
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  gap: .8rem;
+}
+/* Add animation for modal */
+@keyframes zoomIn {
+  from {
+    top: -20%;
+    opacity: 0
+  }
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* Form fields */
+.form__field + .form__field {
+  margin-top: 1.6rem;
+}
+.form__field label {
+  margin-bottom: .4rem;
+  font-weight: 700;
+  color: var(--bold-text-color);
+}
+
+/* Input */
+input[type="text"],
+textarea,
+select {
+  min-width: 24rem;
+  max-width: 100%;
+  padding: .8rem;
+  outline: 1px solid var(--border-color);
+  border: none;
+  border-radius: 3px;
+}
+select {
+  padding-left: .4rem;
+}
+
+/* Button */
+.btn {
+  padding: .8rem 1.25rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.btn--primary {
+  color: white;
+  background-color: var(--btn-bg);
+}
+.btn--primary:not(:disabled):hover {
+  background-color: var(--btn-hover-bg);
+}
+.btn--secondary:not(:disabled):hover {
+  background-color: rgba(0, 0, 0, .15);
+}
+.btn--link {
+  color: red;
+  background: none;
+  text-decoration: underline;
+}
+.btn--link:not(:disabled):hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  text-decoration: underline;
+}
