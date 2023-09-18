@@ -39,7 +39,7 @@ const searchBook = () => {
 
 const addBook = () => {
   let form = document.getElementById('form')
-  const newBook = { id: listBooks.length + 1 }
+  const newBook = { id: Date.now() }
   let fieldName = ''
 
   for (let i = 0; i < form.length; i++) {

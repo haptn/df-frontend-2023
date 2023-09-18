@@ -7,19 +7,21 @@ const loadModalAddBody = () => {
   let fieldInput = ''
 
   allFields.filter(item => item !== 'id').forEach(fieldName => {
-    fieldName = fieldName.charAt(0).toUpperCase() + fieldName.substring(1)
-    fieldInput = `<input type="text" name="${fieldName}" required `
+    fieldName = fieldName === 'isbn'
+      ? fieldName.toUpperCase()
+      : fieldName.charAt(0).toUpperCase() + fieldName.substring(1)
+    fieldInput = `<input type="text" name="${fieldName}" `
 
-    switch (fieldName) {
-      case 'Name':
+    switch (fieldName.toLowerCase()) {
+      case 'name':
         fieldInput += `placeholder="Input book's name" />`
         break;
 
-      case 'Author':
+      case 'author':
         fieldInput += `placeholder="Input book's author(s)" />`
         break;
 
-      case 'Image':
+      case 'image':
         fieldInput = `
           <input id="img-uploader"
             type="file" name="${fieldName}"
@@ -29,7 +31,7 @@ const loadModalAddBody = () => {
         `
         break;
 
-      case 'Topic':
+      case 'topic':
         fieldInput = `
           <select name="${fieldName}">
             <option value="" selected disabled hidden>Select topic</option>
@@ -40,11 +42,11 @@ const loadModalAddBody = () => {
         fieldInput += `</select>`
         break;
 
-      case 'ISBN':
+      case 'isbn':
         fieldInput += `placeholder="Input book's ISBN"/>`
         break;
 
-      case 'Description':
+      case 'description':
         fieldInput = `<textarea name="${fieldName}" rows="3" placeholder="Input description"></textarea>`
         break;
 
@@ -107,7 +109,7 @@ const loadModalViewBody = bookId => {
           <h3>${book?.name}</h3>
           <p class="author">${book?.author}</p>
           <div class="h-flex">
-            <p><b>ISBN:</b> ${book?.ISBN}</p>
+            <p><b>ISBN:</b> ${book?.isbn}</p>
             <p class="topic"><b>Topic:</b> <span>${book?.topic}</span></p>
           </div>
           <br/><hr/>
@@ -149,19 +151,13 @@ const openModalRemove = bookId => {
 }
 
 const openModalView = bookId => {
-  if (modalViewEl.innerHTML) {
-    modalViewEl.style.display = "block"
-    loadModalViewBody(bookId)
-  }
-  else {
-    fetch('./html/modal-view.html')
-      .then(res => res.text())
-      .then(data => {
-        modalViewEl.innerHTML = data
-        modalViewEl.style.display = "block"
-        loadModalViewBody(bookId)
-      })
-  }
+  fetch('./html/modal-view.html')
+    .then(res => res.text())
+    .then(data => {
+      modalViewEl.innerHTML = data
+      modalViewEl.style.display = "block"
+      loadModalViewBody(bookId)
+    })
 }
 
 const closeModal = modalType => {
@@ -176,6 +172,7 @@ const closeModal = modalType => {
       break;
 
     case 'view':
+      modalViewEl.innerHTML = ''
       modalViewEl.style.display = "none"
       break;
 
